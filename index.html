@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Homepage: replace "Your Name" and the placeholder text/image with your own details -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website's Fanzer</title>
+    <link rel="icon" href="favicon.jpeg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header / Navigation (same structure should be used on every page) -->
+    <header class="site-header">
+      <div class="site-brand">
+        <h1>Fanzer Imanuel Kecuwai</h1>
+        <p class="tagline">Web Portfolio</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content area - change only the content inside this container across pages -->
+    <main class="site-container">
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Hello, I'm <strong>Fanzer</strong></h2>
+          <p class="lead">
+            I'm a student/web developer learning modern HTML & CSS. I enjoy
+            building clean, accessible web pages and learning new web
+            technologies. Replace this short intro with your real one.
+          </p>
+          <p class="cta">
+            <a class="btn" href="about.html">Learn more about me</a>
+          </p>
+        </div>
+
+        <!-- Responsive image representing you -->
+        <figure class="hero-image">
+          <img
+            src="profile.jpg"
+            alt="Portrait illustration representing Your Name"
+            class="responsive-img"
+          />
+          <figcaption class="visually-hidden">Profile illustration</figcaption>
+        </figure>
+      </section>
+
+      <!-- Optional aside for quick links or highlights -->
+      <aside class="sidebar">
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="myHoliday.html">My Holiday Gallery</a></li>
+          <li><a href="registration.html">Registration Form</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Your Name — Built with HTML & CSS</p>
+    </footer>
+
+    <script>
+      // small script to update copyright year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

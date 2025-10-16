@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website's Fanzer</title>
+    <link rel="icon" href="favicon.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-brand">
+        <h1>Fanzer Imanuel Kecuwai</h1>
+        <p class="tagline">Web Portfolio</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-container">
+      <article class="hero">
+        <div class="hero-text">
+          <h1>About Me</h1>
+          <h2>Short Bio</h2>
+          <p>
+            Hello — I'm Fanzer Imanuel Kecuwai. I'm learning web development and
+            enjoy building accessible, responsive pages. I'm curious about
+            UI/UX, animations, and progressive enhancement.
+          </p>
+
+          <h3>Background</h3>
+          <p>
+            I study computer science and work on small web projects in my spare
+            time.
+          </p>
+
+          <h4>What I Learn</h4>
+          <p>HTML, CSS (Flexbox & Grid), JavaScript basics, and tooling.</p>
+
+          <h5>Short Term Goals</h5>
+          <p>Build a personal portfolio and learn a JS framework.</p>
+
+          <h6>Contact Me</h6>
+          <p class="lead">Use the Contact page to reach out.</p>
+
+          <!-- Interests using ordered and unordered lists creatively -->
+          <h3>Interests & Hobbies</h3>
+          <p>Here's a playful breakdown of how I spend my time:</p>
+          <ol>
+            <li>
+              Learning & Practice
+              <ul>
+                <li>Reading tutorials</li>
+                <li>Building small projects</li>
+              </ul>
+            </li>
+            <li>
+              Creative Time
+              <ul>
+                <li>Sketching UI ideas</li>
+                <li>Photography</li>
+              </ul>
+            </li>
+            <li>
+              Relaxing
+              <ul>
+                <li>Watching movies</li>
+                <li>Hiking</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Photo with 3:4 ratio and max width 200px -->
+        <figure class="profile-figure">
+          <img
+            src="profile.jpg"
+            alt="Portrait of Fanzer Imanuel Kecuwai"
+            class="profile-img"
+          />
+          <figcaption class="visually-hidden">
+            Portrait of Fanzer Imanuel Kecuwai
+          </figcaption>
+        </figure>
+      </article>
+
+      <aside class="sidebar">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="myHoliday.html">My Holiday Gallery</a></li>
+          <li><a href="registration.html">Registration</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Your Name</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

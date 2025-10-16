@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Holiday Gallery</title>
+    <link rel="icon" href="favicon.jpeg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-brand">
+        <h1>Your Name</h1>
+        <p class="tagline">Web Portfolio</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-container">
+      <section class="hero">
+        <div>
+          <h1>My Holiday</h1>
+          <p class="lead">
+            A small gallery showcasing photos and memories from my holiday.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery-section">
+        <h2>Gallery</h2>
+        <p class="gallery-intro">
+          Click an image to view the caption. Layout uses CSS Flexbox and is
+          responsive.
+        </p>
+
+        <div class="gallery" role="list">
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday1.jpg" alt="Beach at sunrise" />
+            <figcaption>At car with my friend</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday2.jpg" alt="Mountain hike" />
+            <figcaption>City Light in Bandung</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday3.jpg" alt="City sunset" />
+            <figcaption>City sunset with my friend</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday4.jpg" alt="Local market" />
+            <figcaption>Holiday with my friend</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday5.jpg" alt="Historic site" />
+            <figcaption>Talk with my friend</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="holiday6.jpg" alt="Food and dining" />
+            <figcaption>Food and dining</figcaption>
+          </figure>
+
+          <figure class="gallery-item" role="listitem">
+            <img src="profile.jpg" alt="Boat trip" />
+            <figcaption>Play Guitar</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Your Name</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Small enhancement: toggle caption visibility when image clicked (accessible)
+      document.querySelectorAll(".gallery-item img").forEach((img) => {
+        img.addEventListener("click", () => {
+          const cap = img.parentElement.querySelector("figcaption");
+          cap.classList.toggle("visible");
+        });
+      });
+    </script>
+  </body>
+</html>
