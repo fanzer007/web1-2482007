@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Fanzer Imanuel Kecuwai</title>
+    <link rel="icon" href="favicon.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-brand">
+        <h1>Fanzer Imanuel Kecuwai</h1>
+        <p class="tagline">Web Portfolio</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portofolio.html">Portfolio</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="myHoliday.html">Holiday Gallery</a></li>
+          <li><a href="registration.html">Registration</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-container">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Get in Touch</h1>
+          <p class="lead">
+            Have a question or want to work together? Feel free to reach out!
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Information</h3>
+          <ul class="contact-list">
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:fanzer.kecuwai@example.com"
+                >fanzer.kecuwai@example.com</a
+              >
+            </li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+6281234567890">+62 812 3456 7890</a>
+            </li>
+            <li>
+              <strong>Location:</strong>
+              <span>Jakarta, Indonesia</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-row">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-row full">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+
+              <div class="form-row full">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-actions full">
+                <button type="submit" class="btn">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>Fanzer Imanuel Kecuwai</h2>
+          <p class="tagline">Web Portfolio</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portofolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="myHoliday.html">Holiday Gallery</a></li>
+            <li><a href="registration.html">Registration</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Fanzer Imanuel Kecuwai. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

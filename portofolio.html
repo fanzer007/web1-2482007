@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Fanzer Imanuel Kecuwai</title>
+    <link rel="icon" href="favicon.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-portfolio">
+    <header class="site-header">
+      <div class="site-brand">
+        <h1>Fanzer Imanuel Kecuwai</h1>
+        <p class="tagline">Web Portfolio</p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portofolio.html" aria-current="page">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="myHoliday.html">Holiday Gallery</a></li>
+          <li><a href="registration.html">Registration</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-container">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>My Projects</h1>
+          <p class="lead">
+            Here are some of my recent web development projects and experiments.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects-grid">
+        <article class="project-card">
+          <img
+            src="images/project1.jpg"
+            alt="Personal Blog Project"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3>Personal Blog</h3>
+            <p>
+              A responsive blog website built with HTML5 and CSS3. Features
+              modern layout and typography.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Responsive</span>
+            </div>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="images/project2.jpg"
+            alt="Portfolio Website"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>
+              My personal portfolio showcasing web development skills and
+              projects.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS Grid</span>
+              <span>Flexbox</span>
+            </div>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img
+            src="images/project3.jpg"
+            alt="Photo Gallery"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3>Dynamic Gallery</h3>
+            <p>
+              An interactive photo gallery with CSS Grid and simple animations.
+            </p>
+            <div class="project-tags">
+              <span>CSS Grid</span>
+              <span>JavaScript</span>
+              <span>Animation</span>
+            </div>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>Fanzer Imanuel Kecuwai</h2>
+          <p class="tagline">Web Portfolio</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portofolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="myHoliday.html">Holiday Gallery</a></li>
+            <li><a href="registration.html">Registration</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Fanzer Imanuel Kecuwai. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
