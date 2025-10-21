@@ -1,15 +1,32 @@
 /* Basic site layout (shared across pages) */
 :root {
-  --bg: #f7f7f8;
-  --brand: #0b6efd;
-  --text: #222;
-  --muted: #666;
-  --card-bg: #ffffff;
-  --surface: #fafafa;
-  --radius: 8px;
-  --shadow: 0 8px 24px rgba(11, 104, 253, 0.06);
-  --max-width: 1100px;
-  --gap: 1rem;
+  /* Colors */
+  --bg: #f8faff;
+  --brand: #2563eb;
+  --brand-light: #3b82f6;
+  --brand-dark: #1d4ed8;
+  --text: #1a1f36;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --surface: #ffffff;
+
+  /* Spacing */
+  --max-width: 1200px;
+  --gap: clamp(1rem, 2vw, 1.5rem);
+  --padding-x: clamp(1rem, 5vw, 2rem);
+  --section-gap: clamp(2rem, 5vw, 3rem);
+
+  /* Borders & Effects */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --line-height: 1.6;
 }
 * {
   box-sizing: border-box;
@@ -23,13 +40,35 @@
 }
 
 body {
-  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-sans);
   margin: 0;
   color: var(--text);
-  /* soft page gradient for a clean modern look */
-  background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 50%, #eef6ff 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, var(--bg) 50%, #eef6ff 100%);
   background-attachment: fixed;
-  line-height: 1.5;
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for modern browsers */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Better link and button interactions */
+a,
+button,
+.btn {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover,
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 /* decorative, very subtle radial accents behind content */
@@ -71,9 +110,30 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: var(--padding-x);
   background: var(--card-bg);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.site-brand h1 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 .site-brand h1 {
   margin: 0;
@@ -84,7 +144,9 @@ body::before {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: flex-end;
 }
 .site-nav a {
   text-decoration: none;
@@ -96,10 +158,24 @@ body::before {
 }
 .site-container {
   max-width: var(--max-width);
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: var(--section-gap) auto;
+  padding: 0 var(--padding-x);
   display: flex;
   gap: calc(var(--gap) * 2);
+  min-height: calc(100vh - 280px); /* Account for header and footer */
+}
+
+/* Enhance main content areas */
+.hero {
+  padding: calc(var(--gap) * 2);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.hero:hover {
+  box-shadow: var(--shadow-lg);
 }
 .hero {
   flex: 1;
@@ -379,9 +455,25 @@ input[type="tel"],
 input[type="email"],
 input[type="date"],
 textarea {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand-light);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--brand-light);
 }
 textarea {
   min-height: 100px;
@@ -403,6 +495,14 @@ textarea {
   .gallery-item {
     flex: 1 1 calc(50% - 1rem);
   }
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .site-nav ul {
+    justify-content: center;
+  }
 }
 @media (max-width: 700px) {
   .form-row {
@@ -423,12 +523,28 @@ textarea {
   color: #555;
 }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: var(--brand);
   color: #fff;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
   text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 .btn:hover,
 .btn:focus {
